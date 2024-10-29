@@ -27,11 +27,11 @@ class _ListapersonajesState extends State<Listapersonajes> {
             children: [
               bloquesPortada("p1.jpg", "titutlo", "subtitulo"),
               SizedBox(
-                width: widthpantalla*0.03,
+                width: widthpantalla * 0.03,
               ),
               bloquesPortada("p2.jpg", "titutlo", "subtitulo"),
               SizedBox(
-                width: widthpantalla*0.03,
+                width: widthpantalla * 0.03,
               ),
               bloquesPortada("p3.jpg", "titutlo", "subtitulo")
             ],
@@ -55,7 +55,19 @@ class _ListapersonajesState extends State<Listapersonajes> {
         ),
         const SizedBox(
           height: 15,
-        )
+        ),
+        RichText(
+            text: TextSpan(
+                text: titulo,
+                style: const TextStyle(color: Colors.white70, fontSize: 14),
+                children: [
+              TextSpan(
+                  text: subtitulo,
+                  style: const TextStyle(
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 12))
+            ]))
       ],
     );
   }
