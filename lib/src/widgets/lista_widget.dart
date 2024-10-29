@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onepiecelist/src/pages/detail_page.dart';
 
 class Listapersonajes extends StatefulWidget {
   const Listapersonajes({super.key});
@@ -55,45 +56,50 @@ class _ListapersonajesState extends State<Listapersonajes> {
   }
 
   Widget bloquePersonajes(String nombre, int color, String image) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 20),
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
-          color: Color.fromARGB(66, 43, 43, 43)),
-      height: 65,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Row(
-            children: [
-              Container(
-                decoration: BoxDecoration(boxShadow: [
-                  BoxShadow(
-                      blurRadius: 8,
-                      offset: const Offset(0, 5),
-                      spreadRadius: 0,
-                      color: Color(color))
-                ], borderRadius: BorderRadius.circular(20)),
-                padding: const EdgeInsets.all(8),
-                child: Image.asset("assets/$image.png"),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Text(
-                nombre,
-                style: const TextStyle(fontSize: 16, color: Colors.white),
-              )
-            ],
-          ),
-          IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.more_vert_rounded,
-                color: Colors.grey,
-              ))
-        ],
+    return GestureDetector(
+      onTap: ()=>{
+        Navigator.of(context).push(MaterialPageRoute(builder: ((context)=> DetailPage())))
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+            color: Color.fromARGB(66, 43, 43, 43)),
+        height: 65,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                        blurRadius: 8,
+                        offset: const Offset(0, 5),
+                        spreadRadius: 0,
+                        color: Color(color))
+                  ], borderRadius: BorderRadius.circular(20)),
+                  padding: const EdgeInsets.all(8),
+                  child: Image.asset("assets/$image.png"),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  nombre,
+                  style: const TextStyle(fontSize: 16, color: Colors.white),
+                )
+              ],
+            ),
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.more_vert_rounded,
+                  color: Colors.grey,
+                ))
+          ],
+        ),
       ),
     );
   }
