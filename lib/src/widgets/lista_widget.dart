@@ -44,21 +44,22 @@ class _ListapersonajesState extends State<Listapersonajes> {
           const SizedBox(
             height: 20,
           ),
-          bloquePersonajes("nombre", 0xff21E295, "o1"),
-          bloquePersonajes("nombre", 0xff21E295, "o2"),
-          bloquePersonajes("nombre", 0xff21E295, "o3"),
-          bloquePersonajes("nombre", 0xff21E295, "o4"),
-          bloquePersonajes("nombre", 0xff21E295, "o5"),
-          bloquePersonajes("nombre", 0xff21E295, "o6"),
+          bloquePersonajes("Brook", 0xff4913C4, "o1"),
+          bloquePersonajes("Luffy", 0xffF82A2D, "o2"),
+          bloquePersonajes("Portgas D. Ace", 0xffFFCB28, "o3"),
+          bloquePersonajes("Boa Hancock", 0xffFE4649, "o4"),
+          bloquePersonajes("Boa Hancock", 0xffDF1C6A, "o5"),
+          bloquePersonajes("Roronoa Zoro", 0xff21E295, "o6"),
         ],
       ),
     );
   }
 
-  Widget bloquePersonajes(String nombre, int color, String image) {
+  Widget bloquePersonajes(String nombre, int color, String imagen) {
     return GestureDetector(
-      onTap: ()=>{
-        Navigator.of(context).push(MaterialPageRoute(builder: ((context)=> DetailPage())))
+      onTap: () => {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => DetailPage()))
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 20),
@@ -75,16 +76,19 @@ class _ListapersonajesState extends State<Listapersonajes> {
                 Container(
                   decoration: BoxDecoration(boxShadow: [
                     BoxShadow(
-                        blurRadius: 8,
-                        offset: const Offset(0, 5),
-                        spreadRadius: 0,
-                        color: Color(color))
+                      blurRadius: 8,
+                      offset: const Offset(0, 5),
+                      spreadRadius: 0.0,
+                      blurStyle: BlurStyle.normal,
+                      color: Color(color),
+                    )
                   ], borderRadius: BorderRadius.circular(20)),
                   padding: const EdgeInsets.all(8),
-                  child: Image.asset("assets/$image.png"),
+                  child: Hero(
+                      tag: color, child: Image.asset("assets/$imagen.png")),
                 ),
                 const SizedBox(
-                  height: 20,
+                  width: 12,
                 ),
                 Text(
                   nombre,
