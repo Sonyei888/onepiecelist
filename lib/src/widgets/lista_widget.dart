@@ -26,8 +26,13 @@ class _ListapersonajesState extends State<Listapersonajes> {
           Row(
             children: [
               bloquesPortada("p1.jpg", "titutlo", "subtitulo"),
-              
+              SizedBox(
+                width: widthpantalla*0.03,
+              ),
               bloquesPortada("p2.jpg", "titutlo", "subtitulo"),
+              SizedBox(
+                width: widthpantalla*0.03,
+              ),
               bloquesPortada("p3.jpg", "titutlo", "subtitulo")
             ],
           )
@@ -43,7 +48,7 @@ class _ListapersonajesState extends State<Listapersonajes> {
           borderRadius: BorderRadius.circular(18),
           child: Image.asset(
             "assets/$image",
-            width: widthpantalla * 0.3,
+            width: widthpantalla * 0.31,
             height: 110,
             fit: BoxFit.cover,
           ),
