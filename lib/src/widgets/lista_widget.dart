@@ -43,7 +43,12 @@ class _ListapersonajesState extends State<Listapersonajes> {
           const SizedBox(
             height: 20,
           ),
-          bloquePersonajes("nombre", 0xff21E295, "01.jpg"),
+          bloquePersonajes("nombre", 0xff21E295, "o1"),
+          bloquePersonajes("nombre", 0xff21E295, "o2"),
+          bloquePersonajes("nombre", 0xff21E295, "o3"),
+          bloquePersonajes("nombre", 0xff21E295, "o4"),
+          bloquePersonajes("nombre", 0xff21E295, "o5"),
+          bloquePersonajes("nombre", 0xff21E295, "o6"),
         ],
       ),
     );
@@ -51,11 +56,45 @@ class _ListapersonajesState extends State<Listapersonajes> {
 
   Widget bloquePersonajes(String nombre, int color, String image) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           color: Color.fromARGB(66, 43, 43, 43)),
-          height: 65,
-      child: Row(),
+      height: 65,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                      blurRadius: 8,
+                      offset: const Offset(0, 5),
+                      spreadRadius: 0,
+                      color: Color(color))
+                ], borderRadius: BorderRadius.circular(20)),
+                padding: const EdgeInsets.all(8),
+                child: Image.asset("assets/$image.png"),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                nombre,
+                style: const TextStyle(fontSize: 16, color: Colors.white),
+              )
+            ],
+          ),
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.more_vert_rounded,
+                color: Colors.grey,
+              ))
+        ],
+      ),
     );
   }
 
