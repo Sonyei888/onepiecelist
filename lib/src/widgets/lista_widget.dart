@@ -23,21 +23,39 @@ class _ListapersonajesState extends State<Listapersonajes> {
             "Portadas",
             style: titulosStyletext,
           ),
+          const SizedBox(
+            height: 15,
+          ),
           Row(
             children: [
-              bloquesPortada("p1.jpg", "titutlo", "subtitulo"),
+              bloquesPortada("p1.jpg", "titulo: ", "2018"),
               SizedBox(
                 width: widthpantalla * 0.03,
               ),
-              bloquesPortada("p2.jpg", "titutlo", "subtitulo"),
+              bloquesPortada("p2.jpg", "titulo: ", "2022"),
               SizedBox(
                 width: widthpantalla * 0.03,
               ),
-              bloquesPortada("p3.jpg", "titutlo", "subtitulo")
+              bloquesPortada("p3.jpg", "titulo: ", "2023")
             ],
-          )
+          ),
+          const Divider(thickness: 1, color: Color.fromARGB(255, 62, 62, 62)),
+          const SizedBox(
+            height: 20,
+          ),
+          bloquePersonajes("nombre", 0xff21E295, "01.jpg"),
         ],
       ),
+    );
+  }
+
+  Widget bloquePersonajes(String nombre, int color, String image) {
+    return Container(
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(15),
+          color: Color.fromARGB(66, 43, 43, 43)),
+          height: 65,
+      child: Row(),
     );
   }
 
