@@ -8,8 +8,8 @@ class Listapersonajes extends StatefulWidget {
 }
 
 class _ListapersonajesState extends State<Listapersonajes> {
-  final titulosStyletext =
-      const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white);
+  final titulosStyletext = const TextStyle(
+      fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white);
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +19,22 @@ class _ListapersonajesState extends State<Listapersonajes> {
           Text(
             "Portadas",
             style: titulosStyletext,
+          ),
+          Row(
+            children: [],
           )
         ],
       ),
+    );
+  }
+
+  Column bloquesPortada(String image, String titulo, String subtitulo) {
+    return Column(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(18),
+        )
+      ],
     );
   }
 }
