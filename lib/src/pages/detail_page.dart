@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onepiecelist/src/widgets/blur_container.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({super.key, required this.color, required this.image});
@@ -28,7 +29,7 @@ class DetailPage extends StatelessWidget {
                     child: Image.asset(image),
                   ),
                 ),
-                
+                Positioned(child: BlurContainer(child: Container()))
               ],
             )
           ],
