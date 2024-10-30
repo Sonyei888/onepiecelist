@@ -62,6 +62,7 @@ class _ListapersonajesState extends State<Listapersonajes> {
             builder: (context) => DetailPage(
                   color: color,
                   image: "assets/$imagen.png",
+                  nombre: nombre,
                 )))
       },
       child: Container(
