@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onepiecelist/src/widgets/blur_container.dart';
+import 'package:onepiecelist/src/widgets/infotitle_widget.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage(
@@ -85,11 +86,16 @@ class DetailPage extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-            Padding(padding: EdgeInsets.symmetric(horizontal: 8.0), child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-                
-              ],,
-            ),)
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  InfoTitle(title: "Eiichiró Oda", subtitle: "Creador"),
+                  InfoTitle(title: "Japon", subtitle: "Pais"),
+                ],
+              ),
+            )
           ],
         ),
       ),
