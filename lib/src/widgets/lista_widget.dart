@@ -61,6 +61,7 @@ class _ListapersonajesState extends State<Listapersonajes> {
         Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => DetailPage(
                   color: color,
+                  image: "assets/$imagen.png",
                 )))
       },
       child: Container(
