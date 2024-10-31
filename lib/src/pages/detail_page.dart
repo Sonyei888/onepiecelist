@@ -26,6 +26,7 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
+        padding: const EdgeInsets.symmetric(vertical: 22),
         decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [Color(widget.color), Colors.black],
