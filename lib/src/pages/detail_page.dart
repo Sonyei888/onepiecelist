@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onepiecelist/src/widgets/blur_container.dart';
 import 'package:onepiecelist/src/widgets/infotitle_widget.dart';
 
-class DetailPage extends StatelessWidget {
+class DetailPage extends StatefulWidget {
   const DetailPage(
       {super.key,
       required this.color,
@@ -14,13 +14,21 @@ class DetailPage extends StatelessWidget {
   final String nombre;
 
   @override
+  State<DetailPage> createState() => _DetailPageState();
+}
+
+class _DetailPageState extends State<DetailPage> {
+  double AlturaPantalla = 0;
+
+  @override
   Widget build(BuildContext context) {
+    AlturaPantalla = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
-                colors: [Color(color), Colors.black],
+                colors: [Color(widget.color), Colors.black],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter)),
         child: Column(
@@ -31,11 +39,12 @@ class DetailPage extends StatelessWidget {
                 Align(
                   alignment: Alignment.topCenter,
                   child: Container(
-                    width: 500.0,
-                    height: 500.0,
-                    child: Image.asset(
-                      image,
-                      fit: BoxFit.contain,
+                    height: AlturaPantalla*.6,
+                    child: Hero(tag: widget.color,
+                      child: Image.asset(
+                        widget.image,
+                        fit: BoxFit.contain,
+                      ),
                     ),
                   ),
                 ),
@@ -51,7 +60,7 @@ class DetailPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.white.withOpacity(0.1)),
                       child: Text(
-                        nombre,
+                        widget.nombre,
                         style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
@@ -66,7 +75,7 @@ class DetailPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Text(
-                "$nombre #Personaje",
+                "${widget.nombre} #Personaje",
                 style: const TextStyle(
                     color: Colors.white,
                     fontSize: 22,
@@ -96,13 +105,14 @@ class DetailPage extends StatelessWidget {
                 ],
               ),
             ),
+            const Spacer(),
             Container(
               width: double.infinity,
               height: 50,
               alignment: Alignment.center,
               margin: const EdgeInsets.symmetric(horizontal: 8),
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10), color: Color(color)),
+                  borderRadius: BorderRadius.circular(10), color: Color(widget.color)),
               child: const Text(
                 "Volver",
                 style: TextStyle(

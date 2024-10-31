@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:onepiecelist/src/pages/detail_page.dart';
 
@@ -58,7 +59,7 @@ class _ListapersonajesState extends State<Listapersonajes> {
   Widget bloquePersonajes(String nombre, int color, String imagen) {
     return GestureDetector(
       onTap: () => {
-        Navigator.of(context).push(MaterialPageRoute(
+        Navigator.of(context).push(CupertinoPageRoute(
             builder: (context) => DetailPage(
                   color: color,
                   image: "assets/$imagen.png",
